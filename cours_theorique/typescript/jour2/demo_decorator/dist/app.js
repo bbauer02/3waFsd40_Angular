@@ -27,7 +27,7 @@ var Bike = /** @class */ (function () {
 }());
 var bike = new Bike;
 bike.speed = function () { return 5; };
-bike.showWheels();
+//bike.showWheels();
 var Bike_js = {
     // speed : function() { return 18; }
     speed: function () { return 18; }

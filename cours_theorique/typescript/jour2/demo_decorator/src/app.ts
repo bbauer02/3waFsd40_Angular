@@ -20,7 +20,7 @@ class Bike {
 let bike = new Bike;
 
 bike.speed = () => 5;
-bike.showWheels();
+//bike.showWheels();
 
 const Bike_js = {
     // speed : function() { return 18; }
