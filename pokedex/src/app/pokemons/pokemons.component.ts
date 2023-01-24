@@ -10,4 +10,11 @@ import {Pokemon} from "./pokemon";
 export class PokemonsComponent {
   title: string = "Liste des Pokémons";
   pokemons: Pokemon[]  = POKEMONS;
+  selectedPokemon: Pokemon | null = null;
+
+  onSelect(pokemon: Pokemon) {
+    this.selectedPokemon = pokemon;
+  }
+
+
 }
