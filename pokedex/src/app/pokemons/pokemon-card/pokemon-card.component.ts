@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { Pokemon } from '../pokemon';
 
 @Component({
@@ -7,5 +7,10 @@ import { Pokemon } from '../pokemon';
   styleUrls: ['./pokemon-card.component.scss']
 })
 export class PokemonCardComponent {
+  @Output() AddToTeam: EventEmitter<number> = new EventEmitter(); 
   @Input() pokemon: Pokemon | null = null;
+
+  selectPokemonForTeam(id: number) {
+    this.AddToTeam.emit(id);
+  }
 }

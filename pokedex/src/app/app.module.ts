@@ -9,6 +9,7 @@ import { PokemonDetailComponent } from './pokemons/pokemon-detail/pokemon-detail
 import { PokemonTagColorPipe } from './pokemon-tag-color.pipe';
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonCardComponent } from './pokemons/pokemon-card/pokemon-card.component';
+import { PokemonTeamComponent } from './pokemons/pokemon-team/pokemon-team.component';
 
 
 // Définition de la constante pour les routes
@@ -39,7 +40,8 @@ const pokemonsRoutes: Routes = [
     PokemonDetailComponent,
     PokemonTagColorPipe,
     BorderCardDirective,
-    PokemonCardComponent
+    PokemonCardComponent,
+    PokemonTeamComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,9 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
 import {Router, ActivatedRoute} from "@angular/router";
 import {Pokemon} from "../pokemon";
 import POKEMONS from "../mock-pokemon";
+import { outputAst } from '@angular/compiler';
 @Component({
   selector: 'pokemonDetail',
   templateUrl: './pokemon-detail.component.html',
@@ -10,6 +11,8 @@ import POKEMONS from "../mock-pokemon";
 })
 export class PokemonDetailComponent implements OnInit {
   selectedPokemon:Pokemon |null = null;
+
+ 
 
   constructor( private route: ActivatedRoute, private router: Router, private location:Location ) {
 
@@ -28,6 +31,8 @@ export class PokemonDetailComponent implements OnInit {
     //this.router.navigate(['/pokemons']);
     this.location.back(); 
   }
+
+
 
 }
 

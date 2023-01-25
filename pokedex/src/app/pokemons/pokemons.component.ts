@@ -12,8 +12,17 @@ export class PokemonsComponent {
   pokemons: Pokemon[]  = POKEMONS;
   selectedPokemon: Pokemon | null = null;
 
+  teams: Pokemon[] = [];
+
   onSelect(pokemon: Pokemon) {
     this.selectedPokemon = pokemon;
+  }
+
+  AddToTeamParent($event: number) {
+      const addedPokemon : Pokemon | undefined = POKEMONS.find(pokemon => pokemon.id === $event);
+      if(addedPokemon && this.teams.length <=5) {
+        this.teams.push(addedPokemon);
+      }    
   }
 
 

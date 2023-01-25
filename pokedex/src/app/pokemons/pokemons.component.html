@@ -1,10 +1,12 @@
 <div class="container overflow-hidden">
   <h2 >{{title | titlecase }}</h2>
 
+  <pokemonTeam [team]="teams"/>
+
   <div class="container">
     <div class="row row-cols-2 row-cols-lg-2 g-2 g-lg-2">
       <div *ngFor="let pokemon of pokemons" class="col" >
-          <pokemonCard [pokemon] = "pokemon" />
+          <pokemonCard [pokemon] = "pokemon"  (AddToTeam) = "AddToTeamParent($event)"  />
       </div>
     </div>
 </div>
