@@ -9,7 +9,7 @@ export class BorderCardDirective {
       this.setBorder('transparent');
   }
 
-  // Mode initialisation strictPropertyInitialisation = true dans le tsConfig.json
+  // Mode initialisation "strictPropertyInitialization": false,dans le tsConfig.json
   // Par conséquent il faut initialiser borderColor. 
   @Input('appBorderCard') borderColor: string  = "" ;
 
