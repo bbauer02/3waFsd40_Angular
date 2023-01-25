@@ -6,6 +6,8 @@ import {Routes, RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { PokemonDetailComponent } from './pokemons/pokemon-detail/pokemon-detail.component';
+import { PokemonTagColorPipe } from './pokemon-tag-color.pipe';
+import { BorderCardDirective } from './border-card.directive';
 
 
 // Définition de la constante pour les routes
@@ -33,7 +35,9 @@ const pokemonsRoutes: Routes = [
   declarations: [
     AppComponent,
     PokemonsComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    PokemonTagColorPipe,
+    BorderCardDirective
   ],
   imports: [
     BrowserModule,
