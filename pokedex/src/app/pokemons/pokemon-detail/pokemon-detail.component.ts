@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
 import {Router, ActivatedRoute} from "@angular/router";
 import {Pokemon} from "../pokemon";
-import {PokemonService} from "../../pokemon.service";
+import {PokemonService} from "../pokemon.service";
 @Component({
   selector: 'pokemonDetail',
   templateUrl: './pokemon-detail.component.html',

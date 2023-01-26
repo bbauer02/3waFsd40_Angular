@@ -1,51 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {Routes, RouterModule } from "@angular/router";
-
+import {PokemonModule} from "./pokemons/pokemon.module";
 
 import { AppComponent } from './app.component';
-import { PokemonsComponent } from './pokemons/pokemons.component';
-import { PokemonDetailComponent } from './pokemons/pokemon-detail/pokemon-detail.component';
-import { PokemonTagColorPipe } from './pokemon-tag-color.pipe';
-import { BorderCardDirective } from './border-card.directive';
-import { PokemonCardComponent } from './pokemons/pokemon-card/pokemon-card.component';
-import { PokemonTeamComponent } from './pokemons/pokemon-team/pokemon-team.component';
+import {Routes, RouterModule } from "@angular/router";
+import {PokemonsComponent} from "./pokemons/pokemons.component";
+import {PokemonDetailComponent} from "./pokemons/pokemon-detail/pokemon-detail.component";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-
-// Définition de la constante pour les routes
-const pokemonsRoutes: Routes = [
+const appRoutes: Routes = [
   {
-    path:'',
-    redirectTo:'/pokemons',
+    path: '',
+    redirectTo: '/pokemons',
     pathMatch: 'full'
-  },
-  {
-    path: 'pokemons',
-    component: PokemonsComponent
-  },
-  {
-    path:'pokemon/:id',
-    component: PokemonDetailComponent
   },
   {
     path:'**',
-    redirectTo:'/pokemons',
-    pathMatch: 'full'
+    component: PageNotFoundComponent
   }
 ];
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonsComponent,
-    PokemonDetailComponent,
-    PokemonTagColorPipe,
-    BorderCardDirective,
-    PokemonCardComponent,
-    PokemonTeamComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(pokemonsRoutes)
+    RouterModule.forRoot(appRoutes),
+    PokemonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
