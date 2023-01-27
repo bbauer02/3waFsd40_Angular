@@ -3,6 +3,7 @@ import POKEMONS from "./mock-pokemon";
 import {Pokemon} from "./pokemon";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, tap, of} from "rxjs";
+import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,7 @@ export class PokemonService {
 
   getPokemons() : Observable<Pokemon[]> {
 
-    return this.http.get<Pokemon[]>('http://localhost:3000/pokemons').pipe(
+    return this.http.get<Pokemon[]>(`${environment.apiUrl}/pokemons`).pipe(
       tap(
         pokemonList => console.table(pokemonList)),
       catchError(error => {
@@ -30,7 +31,7 @@ export class PokemonService {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     };
-    return this.http.put<Pokemon>('http://localhost:3000/pokemons', pokemon, httpOptions).pipe(
+    return this.http.put<Pokemon>('api/pokemons', pokemon, httpOptions).pipe(
       tap(
         response => console.table(response)),
       catchError(error => {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pokemon} from "./pokemon";
 import {PokemonService} from "./pokemon.service";
-
+import {environment} from "../../environments/environment";
 
 
 @Component({
@@ -11,7 +11,7 @@ import {PokemonService} from "./pokemon.service";
 })
 export class PokemonsComponent implements OnInit{
 
-  title: string = "Liste des Pokémons";
+  title: string = `Liste des Pokémon - ${environment.production? "PROD MOD": "DEV MOD"}`;
   pokemons: Pokemon[]=[];
   selectedPokemon: Pokemon | null = null;
 
