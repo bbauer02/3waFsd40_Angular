@@ -1,12 +1,35 @@
 <div class="container overflow-hidden">
   <h2 >{{title | titlecase }}</h2>
 
-  <pokemonTeam [team]="teams"/>
+  <button (click)="TestAPI()">TESTAPI</button>
+<div>
+  <pokemonSearch (searchPokemon)="onSearchPokemon($event)" />
+</div>
+
 
   <div class="container">
-    <div class="row row-cols-2 row-cols-lg-2 g-2 g-lg-2">
-      <div *ngFor="let pokemon of pokemons" class="col" >
-          <pokemonCard [pokemon] = "pokemon"  (AddToTeam) = "AddToTeamParent($event)"  />
+    <div class="row">
+      <div class="col-10">
+        <div class="row row-cols-1 row-cols-md-2 g-0" >
+          <div class="col" *ngFor="let pokemon of pokemons" >
+            <pokemonCard [pokemon] = "pokemon"  (AddToTeam) = "AddToTeamParent($event)"  />
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <pokemonTeam [team]="teams"/>
       </div>
     </div>
-</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+

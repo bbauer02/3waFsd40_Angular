@@ -7,6 +7,8 @@ import { BorderCardDirective } from './border-card.directive';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonTeamComponent } from './pokemon-team/pokemon-team.component';
 import {Routes, RouterModule } from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 
 // Définition de la constante pour les routes
 const pokemonsRoutes: Routes = [
@@ -27,10 +29,12 @@ const pokemonsRoutes: Routes = [
     PokemonTagColorPipe,
     BorderCardDirective,
     PokemonCardComponent,
-    PokemonTeamComponent],
+    PokemonTeamComponent,
+    PokemonSearchComponent],
   imports: [
     CommonModule,
-    RouterModule.forRoot(pokemonsRoutes)
+    RouterModule.forRoot(pokemonsRoutes),
+    FormsModule
 
   ]
 })

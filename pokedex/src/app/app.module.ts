@@ -4,9 +4,11 @@ import {PokemonModule} from "./pokemons/pokemon.module";
 
 import { AppComponent } from './app.component';
 import {Routes, RouterModule } from "@angular/router";
-import {PokemonsComponent} from "./pokemons/pokemons.component";
-import {PokemonDetailComponent} from "./pokemons/pokemon-detail/pokemon-detail.component";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {HttpClientModule} from "@angular/common/http";
+
+
+
 
 const appRoutes: Routes = [
   {
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
     PokemonModule
   ],

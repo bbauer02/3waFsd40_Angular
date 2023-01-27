@@ -1,4 +1,31 @@
-<h1>Mon équipe !</h1>
-<ul>
-    <li *ngFor="let pokemon of team">{{pokemon.name}}</li>
-</ul>
+<div class="card" >
+  <div class="card-header">
+    Mon équipe !
+  </div>
+  <ul class="list-group list-group-flush" *ngIf="team.length > 0; else noTeam">
+    <li class="list-group-item" *ngFor="let pokemon of team">
+
+      <div class="card" style="background-color: #c7a008">
+        <div class="row">
+          <div class="col-3">
+            <img src={{pokemon.picture}} class="rounded-start" width="50" alt="{{pokemon.name}}">
+          </div>
+          <div class="col-9">
+            <div class="card-body">
+              {{pokemon.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </li>
+  </ul>
+  <ng-template #noTeam>
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item">Aucun Pokémon</li>
+    </ul>
+  </ng-template>
+</div>
+
+
